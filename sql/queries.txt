@@ -1,0 +1,12 @@
+SELECT manufacturer,count(model) FROM `transport` group BY manufacturer
+
+SELECT model, manufacturer, image, cargo_capacity FROM transport ORDER by cargo_capacity desc limit 3
+
+
+Select model as tipus from transport where cargo_capacity =1 and max_atmosphering_speed =1  AND passengers =1 and crew = 1 and manufacturer like 'A%' OR manufacturer LIKE 'B%' OR manufacturer like 'C%'
+
+Select model as tipus from transport where crew = 1 and manufacturer like 'A%' OR manufacturer LIKE 'B%' OR manufacturer like 'C%'
+
+SELECT * FROM `transport` WHERE manufacturer LIKE '%Corporation%' AND passengers>0  and cost_in_credits BETWEEN 10000 and 200000
+
+select  crew,model as megnevezés, manufacturer as gyártó from transport where crew BETWEEN 1 and 5 and cargo_capacity is not null and cargo_capacity>0 and passengers IS NOT null and passengers>0 group by crew limit 3
